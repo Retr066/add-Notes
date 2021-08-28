@@ -14,6 +14,9 @@ const Container = styled.div`
 const ContainerForm = styled.div`
   display: flex;
   width: 50%;
+  @media (max-width: 375px) {
+    width: 90%;
+  }
 `;
 const Input = styled.input`
   outline: none;

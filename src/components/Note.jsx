@@ -12,6 +12,9 @@ const Container = styled.div`
   padding: 1em 10px;
   border-radius: 15px;
   word-break: break-word;
+  @media (max-width: 375px) {
+    width: 90%;
+  }
 `;
 const Title = styled.div`
   font-size: 1em;
