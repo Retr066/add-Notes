@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 1em 10px;
   border-radius: 15px;
   word-break: break-word;
-  @media (max-width: 375px) {
+  @media (max-width: 400px) {
     width: 90%;
   }
 `;
