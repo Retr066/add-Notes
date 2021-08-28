@@ -7,6 +7,7 @@ const Message = styled.p`
   font-style: italic;
   color: red;
   transition: all 0.5s ease;
+  text-align: center;
 `;
 
 function Alert({ message, handleHidden }) {

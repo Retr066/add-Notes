@@ -14,7 +14,7 @@ const Container = styled.div`
 const ContainerForm = styled.div`
   display: flex;
   width: 50%;
-  @media (max-width: 400px) {
+  @media (max-width: 425px) {
     width: 90%;
   }
 `;

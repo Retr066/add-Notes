@@ -15,7 +15,7 @@ const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
-  @media (max-width: 400px) {
+  @media (max-width: 425px) {
     width: 80%;
     font-size: 2.5em;
   }
