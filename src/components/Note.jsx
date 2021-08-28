@@ -15,6 +15,9 @@ const Container = styled.div`
   @media (max-width: 425px) {
     width: 90%;
   }
+  @media (max-width: 768px) {
+    width: 75%;
+  }
 `;
 const Title = styled.div`
   font-size: 1em;
@@ -66,14 +69,19 @@ const Note = ({ note }) => {
       color: nota.color,
       completed: target,
     };
+
     hiddenTrash.toogle();
     updatedNote(newNota);
   };
-  const handleEditNote = () => {
+  const handleEditNote = (completed) => {
     const div = inputEl.current;
-    div.setAttribute('contentEditable', true);
-    hiddenSpan.toggledFalse();
-    hiddenOption.toggledTrue();
+    if (completed === false) {
+      div.setAttribute('contentEditable', true);
+      hiddenSpan.toggledFalse();
+      hiddenOption.toggledTrue();
+    } else {
+      div.setAttribute('contentEditable', false);
+    }
   };
   const handleEdit = (id) => {
     hiddenOption.toogle();
@@ -93,7 +101,9 @@ const Note = ({ note }) => {
     <Container inputColor={note.color}>
       <Title
         className={`${note.completed ? 'something' : ''}`}
-        onClick={handleEditNote}
+        onClick={() => {
+          handleEditNote(note.completed);
+        }}
         spellCheck={false}
         ref={inputEl}
       >
@@ -109,7 +119,7 @@ const Note = ({ note }) => {
         <Span hidden={hiddenSpan.hidden}>
           <i className="fas fa-save" onClick={() => handleEdit(note.id)}></i>
         </Span>
-        <Span hidden={hiddenTrash.hidden}>
+        <Span hidden={!note.completed}>
           <i onClick={handleRemove(note.id)} className="fas fa-trash"></i>
         </Span>
       </ContainerOptions>

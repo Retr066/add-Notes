@@ -12,12 +12,14 @@ const Title = styled.h1`
   width: 50%;
   height: 10%;
   margin: 0 auto;
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
   color: palevioletred;
   @media (max-width: 425px) {
     width: 80%;
-    font-size: 2.5em;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;
 
@@ -25,7 +27,7 @@ function App() {
   return (
     <AppProvider>
       <Container>
-        <Title>Applying Notes Using React Hooks</Title>
+        <Title>App Notes Using React Hooks</Title>
         <Submit></Submit>
 
         <Notes></Notes>
