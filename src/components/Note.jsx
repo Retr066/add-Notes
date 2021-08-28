@@ -25,7 +25,7 @@ const Title = styled.div`
   text-align: center;
   transition: all 0.5s ease;
   outline: none;
-  color: #000000a6;
+  color: #000;
   &.something {
     text-decoration: line-through;
     opacity: 0.7;
@@ -110,7 +110,9 @@ const Note = ({ note }) => {
         {note.note}
       </Title>
       <ContainerOptions>
+        <label htmlFor="completed"></label>
         <Option
+          name="completed"
           hidden={hiddenOption.hidden}
           defaultChecked={note.completed}
           type="checkbox"
